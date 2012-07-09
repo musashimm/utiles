@@ -1,4 +1,4 @@
-require 'utiles'
+require 'lib/utiles'
 
 describe NilClass do
 
@@ -67,6 +67,18 @@ describe String do
   it "Data in 185 GB" do
     "185393114721".to_data_vol.should eq("185 GB")
   end
+  
+  it "Data in 18 GB" do
+    "18093114721".to_data_vol.should eq("18 GB")
+  end
+  
+  it "Data in 1,05 GB" do
+    "1053114721".to_data_vol.should eq("1,05 GB")
+  end
+  
+  it "Data in 1 GB" do
+    "1003114721".to_data_vol.should eq("1 GB")
+  end
 
   it "Data in 18 GB" do
     "18539311472".to_data_vol.should eq("18,5 GB")
@@ -90,6 +102,10 @@ describe String do
   
   it "Data in 18 kB" do
     "18532".to_data_vol.should eq("18,5 kB")
+  end
+  
+  it "Data in 1,08 kB" do
+    "1080".to_data_vol.should eq("1,08 kB")
   end
   
   it "Data in 185 B" do
@@ -137,6 +153,58 @@ describe Integer do
   it "is_blank?" do
     a = 2
     a.is_blank?.should be_false
+  end
+  
+  it "Data in 185 GB" do
+    185393114721.to_data_vol.should eq("185 GB")
+  end
+  
+  it "Data in 18 GB" do
+    18093114721.to_data_vol.should eq("18 GB")
+  end
+  
+  it "Data in 1,05 GB" do
+    1053114721.to_data_vol.should eq("1,05 GB")
+  end
+  
+  it "Data in 1 GB" do
+    1003114721.to_data_vol.should eq("1 GB")
+  end
+
+  it "Data in 18 GB" do
+    18539311472.to_data_vol.should eq("18,5 GB")
+  end
+    
+  it "Data in 185 MB" do
+    185393114.to_data_vol.should eq("185 MB")
+  end
+  
+  it "Data in 18 MB" do
+    18539311.to_data_vol.should eq("18,5 MB")
+  end
+  
+  it "Data in 1 MB" do
+    1853931.to_data_vol.should eq("1,85 MB")
+  end
+  
+  it "Data in 185 kB" do
+    185322.to_data_vol.should eq("185 kB")
+  end
+  
+  it "Data in 18 kB" do
+    18532.to_data_vol.should eq("18,5 kB")
+  end
+  
+  it "Data in 1,08 kB" do
+    1080.to_data_vol.should eq("1,08 kB")
+  end
+  
+  it "Data in 185 B" do
+    185.to_data_vol.should eq("185 B")
+  end
+  
+  it "Data in 0" do
+    0.to_data_vol.should eq("0")
   end
 
 end

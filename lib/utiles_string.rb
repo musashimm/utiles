@@ -32,7 +32,25 @@ class String
   #   "18539311".to_date_vol => "185 MB"
   #   "18532".to_date_vol => "18,5 kB"
   def to_data_vol
-    to_i.to_data_vol
+    case
+      when length > 9
+        label = "GB"
+        border = 9
+      when length > 6
+        label = "MB"
+        border = 6
+      when length > 3
+        label = "kB"
+        border = 3
+      else
+        label = "B"
+        return self == "0" ? "0" : "#{self} #{label}"
+    end
+    int = self[0,length-border].to_i
+    rest = self[-border,border]
+    sets = int < 10 ? rest[0,2] : int < 100 ? rest[0,1] : ""
+    setss = int < 100 ? sets.to_i.zero? ? "" : ",#{sets}" : ""
+    "#{int}#{setss} #{label}"
   end
 
 end
