@@ -1,5 +1,5 @@
 # encoding: UTF-8
-require 'lib/utiles'
+require 'utiles'
 
 describe NilClass do
 
