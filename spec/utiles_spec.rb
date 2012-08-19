@@ -122,24 +122,19 @@ end
 describe Time do
 
   before do
-    secs = 1341225602
-    @time = Time.at(secs)
-  end
-
-  it "to_s" do
-    @time.to_s.should eq("Mon Jul 02 12:40:02 +0200 2012")
+    @time = Time.now
   end
 
   it "to_str" do
-    @time.to_str.should eq("2012-07-02 / 12:40:02")
+    @time.to_str.should eq(@time.localtime.strftime("%Y-%m-%d / %H:%M:%S"))
   end
 
   it "to_str(:minutes)" do
-    @time.to_str(:minutes).should eq("2012-07-02 / 12:40")
+    @time.to_str(:minutes).should eq(@time.localtime.strftime("%Y-%m-%d / %H:%M"))
   end
 
   it "to_str(:date)" do
-    @time.to_str(:date).should eq("2012-07-02")
+    @time.to_str(:date).should eq(@time.localtime.strftime("%Y-%m-%d"))
   end
 
 end
