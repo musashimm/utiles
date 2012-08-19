@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/musashimm/utiles.png)](http://travis-ci.org/musashimm/utiles)
+
 Utiles
 ======
 
