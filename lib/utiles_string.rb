@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # Extentions for String class.
 class String
   
