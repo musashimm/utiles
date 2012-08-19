@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Wojciech Todryk"]
   s.email       = ["wojciech@todryk.pl"]
-  s.homepage    = "http://todryk.pl/utiles"
+  s.homepage    = "http://todryk.pl/hard-soft/utiles"
   s.summary     = %q{Utiles}
   s.description = %q{Extends standard classes}
 
